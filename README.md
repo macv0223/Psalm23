@@ -87,3 +87,4 @@ The canonical repository is `macv0223/Psalm23` at `https://github.com/macv0223/P
 This package includes an `index.html` and complete `assets/`, `admin/`, and `data/` at the repository ROOT, in addition to the original `dist/` build. For branch-based hosting, select **Settings > Pages > Deploy from a branch > main > /(root)**.
 
 The hidden `.github/workflows/pages.yml` has also been included for automatic CMS publishing. For this preferred long-term mode, instead select **GitHub Actions** in **Settings > Pages > Build and deployment > Source**. This must be selected by a repository administrator; simply including the workflow does not change the Pages Source setting. The editor is not live until Cloudflare OAuth is separately configured.
+
