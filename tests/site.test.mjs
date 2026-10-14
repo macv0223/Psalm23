@@ -5,15 +5,22 @@ import {validateSite,renderPage,renderDocument,esc,media,phoneDigits} from '../p
 import {cmsConfig,isConfigured} from '../scripts/cms-config.mjs';
 const data=JSON.parse(readFileSync(new URL('../content/site.json',import.meta.url),'utf8'));
 const clone=()=>structuredClone(data);
-test('verified original site content and contact details',()=>{
+test('revised customer-facing copy and verified contact details',()=>{
   assert.equal(validateSite(data),true);
   const html=renderDocument(data);
-  assert.match(html,/Anything\./);
-  assert.match(html,/Anywhere\./);
+  assert.match(html,/Moving\./);
+  assert.match(html,/With purpose\./);
   assert.match(html,/281-766-1320/);
   assert.match(html,/Psalm23Transportation@yahoo.com/);
   assert.match(html,/Isabella, her boyfriend, and her dad/);
+  assert.match(html,/Putting the pieces together/i);
+  assert.match(html,/What needs transporting\?/);
+  assert.doesNotMatch(html,/Your load|We.take your load|What do you need hauled/i);
+  assert.doesNotMatch(html,/psalm-23-transportation\.igarza5652\.chatgpt\.site/);
+  assert.match(html,/assets\/uploads\/psalm23-puzzle-cross\.webp/);
   assert.match(html,/id="quote-form"/);
+  assert.match(html,/Text us directly/);
+  assert.match(html,/sms:2817661320/);
 });
 test('text from CMS fields is HTML escaped',()=>{
   const x=clone();x.hero.headline1='<img src=x onerror=alert(1)>';

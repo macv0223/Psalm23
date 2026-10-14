@@ -38,22 +38,23 @@ export function validateSite(data){
   }
   return true;
 }
-function picture(path,description,cls,fallBack='assets/brand-mark.svg'){
+function picture(path,description,cls,fallBack='assets/uploads/psalm23-puzzle-cross.webp',eager=false){
   const url=media(path)||fallBack;
-  return `<img class="${esc(cls)}" src="${esc(url)}" data-image-fallback="${esc(fallBack)}" alt="${esc(description)}" loading="lazy" decoding="async">`;
+  return `<img class="${esc(cls)}" src="${esc(url)}" data-image-fallback="${esc(fallBack)}" alt="${esc(description)}" loading="${eager?'eager':'lazy'}" decoding="async">`;
 }
 export function renderPage(data){
   const {settings:s,navigation:n,hero:h,services:v,story:y,quote:q}=data;
   const phone=phoneDigits(s.phone),link=`tel:${encodeURIComponent(phone)}`;
   const style=`--brand-primary:${color(s.primaryColor,'#12312f')};--brand-accent:${color(s.accentColor,'#db9d46')}`;
-  const logo=picture(s.logo,s.logoAlt,'truck-logo');
+  const logo=picture(s.logo,s.logoAlt,'brand-cross','assets/uploads/psalm23-puzzle-cross.webp',true);
+  const mark=picture(s.logo,'','brand-symbol','assets/uploads/psalm23-puzzle-cross.webp',true);
   const scene=media(h.heroImage)?picture(h.heroImage,h.heroImageAlt,'hero-picture','assets/hauling-scene.svg'):'<img class="hero-picture hero-illustration" src="assets/hauling-scene.svg" alt="" aria-hidden="true">';
   const storyImage=media(y.storyImage)?`<div class="story-upload">${picture(y.storyImage,y.storyImageAlt,'story-upload-image')}</div>`:'';
   const cards=v.cards.map((item,i)=>`<article class="service-card"><span class="service-no">${esc(item.number||String(i+1).padStart(2,'0'))}</span><div class="service-icon" aria-hidden="true">${['↗','▦','→'][i%3]}</div><h3>${esc(item.title)}</h3><p>${esc(item.description)}</p><span class="service-stroke" aria-hidden="true"></span></article>`).join('');
   return `<div class="site" style="${style}">
   <a class="skip-link" href="#main">Skip to main content</a>
   <header class="site-header"><div class="container header-inner">
-    <a class="brand" href="#top" aria-label="${esc(s.businessName)} — home"><span class="brand-icon"><img src="assets/favicon.svg" alt="" width="40" height="40"></span><span class="brand-wordmark"><strong>${esc(s.brandTop)}</strong><span>${esc(s.brandBottom)}</span></span></a>
+    <a class="brand" href="#top" aria-label="${esc(s.businessName)} — home"><span class="brand-icon">${mark}</span><span class="brand-wordmark"><strong>${esc(s.brandTop)}</strong><span>${esc(s.brandBottom)}</span></span></a>
     <button type="button" class="menu-toggle" aria-label="Open navigation" aria-controls="primary-navigation" aria-expanded="false"><span></span><span></span><span></span></button>
     <nav class="nav" id="primary-navigation" aria-label="Main navigation"><a href="#services">${esc(n.services)}</a><a href="#story">${esc(n.story)}</a><a href="#quote" class="nav-quote">${esc(n.quote)} <span aria-hidden="true">↗</span></a></nav>
     <a class="header-phone" href="${esc(link)}" aria-label="Call ${esc(s.phone)}">${esc(s.phone)}</a>
@@ -71,21 +72,21 @@ export function renderPage(data){
     <div class="section-heading"><div><p class="eyebrow">${esc(v.eyebrow)}</p><h2 id="services-title">${esc(v.headline1)}<br><em>${esc(v.headline2)}</em></h2></div><p class="section-intro">${esc(v.intro)}</p></div>
     <div class="service-grid">${cards}</div><a class="section-link" href="#quote">Tell us what you need moved <span aria-hidden="true">↗</span></a>
   </div></section>
-  <section class="story-section" id="story" aria-labelledby="story-title"><div class="container story-grid"><div class="story-art"><div class="story-frame"><div class="story-large-cross" aria-hidden="true">✝</div><div class="story-orbit orbit-one"></div><div class="story-orbit orbit-two"></div><div class="story-lightbox"><span>23</span><small>THE HEART BEHIND<br>THE HAUL</small></div>${storyImage}</div><div class="art-caption">ROOTED IN FAITH <span>•</span> DRIVEN BY FAMILY</div></div>
+  <section class="story-section" id="story" aria-labelledby="story-title"><div class="container story-grid"><div class="story-art"><div class="story-frame">${picture(s.logo,'','story-cross-image','assets/uploads/psalm23-puzzle-cross.webp')}<div class="story-orbit orbit-one"></div><div class="story-orbit orbit-two"></div><div class="story-lightbox"><span>23</span><small>FAITH, FAMILY<br>&amp; SERVICE</small></div>${storyImage}</div><div class="art-caption">ROOTED IN FAITH <span>•</span> DRIVEN BY FAMILY</div></div>
     <div class="story-copy"><p class="eyebrow eyebrow-light">${esc(y.eyebrow)}</p><h2 id="story-title">${esc(y.headline1)}<br><em>${esc(y.headline2)}</em></h2><p>${esc(y.paragraph1)}</p><p>${esc(y.paragraph2)}</p><blockquote><p>${esc(y.verse)}</p><cite>${esc(y.verseCitation)}</cite></blockquote></div>
   </div></section>
-  <section class="quote-section" id="quote" aria-labelledby="quote-title"><div class="container quote-grid"><div class="quote-info"><p class="eyebrow">${esc(q.eyebrow)}</p><h2 id="quote-title">${esc(q.headline1)}<br><em>${esc(q.headline2)}</em></h2><p>${esc(q.intro)}</p><div class="contact-links"><a href="${esc(link)}"><span class="contact-icon" aria-hidden="true">↗</span><span><small>CALL OR TEXT</small><strong>${esc(s.phone)}</strong></span></a><a href="mailto:${esc(s.email)}"><span class="contact-icon" aria-hidden="true">✉</span><span><small>EMAIL US</small><strong>${esc(s.email)}</strong></span></a></div><p class="contact-note">${esc(q.smallNote)}</p></div>
+  <section class="quote-section" id="quote" aria-labelledby="quote-title"><div class="container quote-grid"><div class="quote-info"><p class="eyebrow">${esc(q.eyebrow)}</p><h2 id="quote-title">${esc(q.headline1)}<br><em>${esc(q.headline2)}</em></h2><p>${esc(q.intro)}</p><div class="contact-links"><a href="${esc(link)}"><span class="contact-icon" aria-hidden="true">↗</span><span><small>CALL US</small><strong>${esc(s.phone)}</strong></span></a><a href="mailto:${esc(s.email)}"><span class="contact-icon" aria-hidden="true">✉</span><span><small>EMAIL US</small><strong>${esc(s.email)}</strong></span></a></div><p class="contact-note">${esc(q.smallNote)} <a class="contact-sms" href="sms:${esc(phone)}">Text us directly ↗</a></p></div>
     <form id="quote-form" class="quote-form" data-phone="${esc(phone)}" data-email="${esc(s.email)}" novalidate><div class="form-intro"><span>START YOUR QUOTE</span><span aria-hidden="true">↗</span></div><div class="field field-full"><label for="customer-name">${esc(q.nameLabel)} <span aria-label="required">*</span></label><input id="customer-name" name="customerName" type="text" placeholder="${esc(q.namePlaceholder)}" autocomplete="name" maxlength="120" required></div>
       <div class="field-row"><div class="field"><label for="pickup">${esc(q.pickupLabel)} <span aria-label="required">*</span></label><input id="pickup" name="pickup" type="text" placeholder="${esc(q.pickupPlaceholder)}" maxlength="180" required></div><div class="field"><label for="destination">${esc(q.destinationLabel)} <span aria-label="required">*</span></label><input id="destination" name="destination" type="text" placeholder="${esc(q.destinationPlaceholder)}" maxlength="180" required></div></div>
       <div class="field field-full"><label for="load">${esc(q.loadLabel)} <span aria-label="required">*</span></label><textarea id="load" name="load" rows="4" placeholder="${esc(q.loadPlaceholder)}" maxlength="2500" required></textarea></div>
       <div class="field field-full"><label for="timeframe">${esc(q.dateLabel)}</label><input id="timeframe" name="timeframe" type="text" placeholder="${esc(q.datePlaceholder)}" maxlength="140"></div>
       <button type="submit" class="btn btn-primary btn-submit">${esc(q.submitButton)} <span aria-hidden="true">↗</span></button><div class="form-alt"><button class="alt-action" type="button" data-action="email">${esc(q.emailButton)}</button><button class="alt-action" type="button" data-action="copy">${esc(q.copyButton)}</button></div><p class="form-message" id="form-status" role="status" aria-live="polite"></p><p class="form-note">${esc(q.disclaimer)}</p>
     </form></div></section>
-  </main><footer class="footer"><div class="container footer-inner"><a class="brand footer-brand" href="#top"><span class="brand-icon"><img src="assets/favicon.svg" alt="" width="36" height="36"></span><span class="brand-wordmark"><strong>${esc(s.brandTop)}</strong><span>${esc(s.brandBottom)}</span></span></a><p>${esc(s.tagline)}</p><small>© ${esc(s.copyrightYear)} ${esc(s.businessName)}. All rights reserved.</small></div></footer>
+  </main><footer class="footer"><div class="container footer-inner"><a class="brand footer-brand" href="#top"><span class="brand-icon">${mark}</span><span class="brand-wordmark"><strong>${esc(s.brandTop)}</strong><span>${esc(s.brandBottom)}</span></span></a><p>${esc(s.tagline)}</p><small>© ${esc(s.copyrightYear)} ${esc(s.businessName)}. All rights reserved.</small></div></footer>
   </div>`;
 }
 export function renderDocument(data){
-  const title=`${data.settings.businessName} | Anything. Anywhere.`;
+  const title=`${data.settings.businessName} | Equipment & Materials Transportation`;
   const description=String(data.hero.intro).slice(0,160);
-  return `<!doctype html>\n<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="${esc(color(data.settings.primaryColor,'#12312f'))}"><meta name="description" content="${esc(description)}"><meta property="og:type" content="website"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(description)}"><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/site.css"><title>${esc(title)}</title></head><body>${renderPage(data)}<script type="module" src="assets/app.js"></script></body></html>`;
+  return `<!doctype html>\n<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="${esc(color(data.settings.primaryColor,'#12312f'))}"><meta name="description" content="${esc(description)}"><meta property="og:type" content="website"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(description)}"><link rel="icon" href="assets/favicon.png" type="image/png"><link rel="stylesheet" href="assets/site.css"><title>${esc(title)}</title></head><body>${renderPage(data)}<script type="module" src="assets/app.js"></script></body></html>`;
 }

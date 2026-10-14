@@ -5,8 +5,8 @@
     "brandBottom": "TRANSPORTATION",
     "phone": "281-766-1320",
     "email": "Psalm23Transportation@yahoo.com",
-    "logo": "https://psalm-23-transportation.igarza5652.chatgpt.site/logo.jpeg",
-    "logoAlt": "Psalm 23 Transportation logo featuring a colorful puzzle-piece cross, white Ford F-250, and flatbed trailer",
+    "logo": "assets/uploads/psalm23-puzzle-cross.webp",
+    "logoAlt": "Psalm 23 Transportation emblem: a Christian cross made of interlocking bronze and forest-green puzzle pieces",
     "tagline": "He leads. We haul.",
     "verseReference": "PSALM 23:1",
     "copyrightYear": "2026",
@@ -14,74 +14,74 @@
     "accentColor": "#db9d46"
   },
   "navigation": {
-    "services": "What we haul",
+    "services": "What we transport",
     "story": "Our story",
     "quote": "Request a quote"
   },
   "hero": {
-    "eyebrow": "FAMILY OWNED. FAITH CENTERED.",
-    "headline1": "Anything.",
-    "headline2": "Anywhere.",
-    "intro": "Whatever you need hauled, wherever it needs to go. Tell us about your load, and let’s get it moving.",
+    "eyebrow": "FAMILY-OWNED. FAITH-GUIDED.",
+    "headline1": "Moving.",
+    "headline2": "With purpose.",
+    "intro": "Family-owned hauling for equipment, materials, and other items that need moving. Tell us what, where, and when; we’ll help you plan the next step.",
     "primaryButton": "Request a quote",
     "secondaryButton": "Call us",
-    "ribbon": "YOUR LOAD. YOUR DESTINATION. OUR COMMITMENT.",
+    "ribbon": "PUTTING THE PIECES TOGETHER, FROM PICKUP TO DELIVERY.",
     "heroImage": "",
     "heroImageAlt": ""
   },
   "services": {
-    "eyebrow": "READY TO GET MOVING?",
-    "headline1": "Big plans.",
-    "headline2": "Real hauling.",
-    "intro": "From a local pickup to a long-distance haul, start with the details. We’ll talk through your load, route, and timing to confirm what works.",
+    "eyebrow": "CLEAR PLANS. CAREFUL TRANSPORT.",
+    "headline1": "From pickup.",
+    "headline2": "To delivery.",
+    "intro": "Every job starts with the details. We’ll discuss what needs moving, the route, and your timeframe before confirming availability and pricing.",
     "cards": [
       {
         "number": "01",
         "title": "Equipment & materials",
-        "description": "Need equipment, supplies, or bulky materials moved? Send us the size, weight, and pickup details."
+        "description": "Need equipment, supplies, or bulky items transported? Share the dimensions, approximate weight, and pickup details so we can discuss the job."
       },
       {
         "number": "02",
-        "title": "Scrap & cleanup loads",
-        "description": "Have scrap metal, debris, or a load to clear out? Tell us what you have and where it needs to go."
+        "title": "Scrap & cleanup transport",
+        "description": "Moving scrap metal or clearing materials from a property? Tell us what needs collecting and where it should be delivered."
       },
       {
         "number": "03",
-        "title": "Your next haul",
-        "description": "Something else in mind? We welcome hauling inquiries of every kind, to destinations near and far."
+        "title": "Local & longer-distance trips",
+        "description": "From nearby pickups to longer journeys, share the starting point, destination, and preferred date. We’ll confirm what’s possible."
       }
     ]
   },
   "story": {
-    "eyebrow": "THE HEART BEHIND THE HAUL",
+    "eyebrow": "FAITH, FAMILY & SERVICE",
     "headline1": "Built on faith.",
-    "headline2": "Run by family.",
-    "paragraph1": "Psalm 23 Transportation began with a shared calling to build something together. We’re a family-owned business founded by Isabella, her boyfriend, and her dad, with God at the center of it all.",
-    "paragraph2": "Our name is a reminder of who leads us. Our work is an opportunity to serve others with care, honest communication, and a commitment to the job in front of us.",
+    "headline2": "Driven by care.",
+    "paragraph1": "Psalm 23 Transportation is a family-owned business founded by Isabella, her boyfriend, and her dad. Their shared Christian faith is at the heart of what they are building together.",
+    "paragraph2": "Like the pieces of our cross, every successful journey depends on the details coming together. We aim to communicate clearly, treat people fairly, and approach every job with care.",
     "verse": "“The Lord is my shepherd; I shall not want.”",
     "verseCitation": "Psalm 23:1",
     "storyImage": "",
     "storyImageAlt": ""
   },
   "quote": {
-    "eyebrow": "LET’S TALK ABOUT YOUR LOAD",
-    "headline1": "Where are",
-    "headline2": "we headed?",
-    "intro": "Share a few details to start your quote. We’ll confirm the load, availability, and price with you directly.",
-    "smallNote": "Prefer to keep it simple? Text us directly.",
+    "eyebrow": "LET’S PLAN YOUR TRANSPORT",
+    "headline1": "Ready to",
+    "headline2": "get moving?",
+    "intro": "Tell us what needs transporting, where it should be collected, and where it’s going. We’ll review the details and get back to you about availability and a quote.",
+    "smallNote": "Prefer a quick conversation? Call, text, or email us directly.",
     "nameLabel": "Your name",
     "namePlaceholder": "First and last name",
     "pickupLabel": "Pickup location",
     "pickupPlaceholder": "City and state",
-    "destinationLabel": "Destination",
+    "destinationLabel": "Delivery location",
     "destinationPlaceholder": "City and state",
-    "loadLabel": "What do you need hauled?",
-    "loadPlaceholder": "Describe your load, approximate size, and any important details",
+    "loadLabel": "What needs transporting?",
+    "loadPlaceholder": "Describe the items, estimated size or weight, and any special details",
     "dateLabel": "When do you need it moved? (optional)",
     "datePlaceholder": "Preferred date or timeframe",
     "submitButton": "Text my quote request",
     "emailButton": "Email instead",
     "copyButton": "Copy request",
-    "disclaimer": "Opens your messaging app with your details filled in. Review the message and tap send there."
+    "disclaimer": "Opens a message in your texting app. Please review and send it yourself; your request is not sent automatically."
   }
 }

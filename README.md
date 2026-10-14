@@ -2,7 +2,7 @@
 
 A polished, responsive recreation of the public-facing **Psalm 23 Transportation** single-page website. It includes a separately hosted administration interface, designed around the same architecture as the Thrive PTO project: **Decap CMS, GitHub content storage, GitHub Pages deployment, and a Cloudflare Worker for GitHub OAuth sign-in**.
 
-The content and contact details were transcribed from the source page supplied by the client. Visual styling is an original recreation, not a guaranteed pixel-perfect copy of the source CSS. The original logo is currently linked from the reference site until an approved local image is uploaded.
+The business contact details come from the client's original site. The revised page copy replaces repetitive double-meaning language with practical descriptions, clear enquiry steps and faith-led family values. The approved bronze-and-green jigsaw cross is stored locally; the homepage no longer hotlinks the previous logo.
 
 ## What's included
 
@@ -14,13 +14,15 @@ The content and contact details were transcribed from the source page supplied b
 - Cloudflare Worker OAuth with state + PKCE verification, secure cookies, GitHub user allowlists, and repository permission checks.
 - GitHub Actions build/publish workflow and dependency-free site build/tests.
 
+For the complete approved-on-page wording, see `docs/REVISED-COPY.md`.
+
 ## Start here
 
 1. Open `docs/SETUP.md` for the GitHub Pages + Cloudflare setup steps.
 2. Open `dist/index.html` locally for a static preview. No CMS sign-in is available until GitHub and Cloudflare are connected.
 3. After deployment visit `https://YOUR-DOMAIN/admin/` for editor access.
 
-**Do not upload this into the Thrive PTO repository.** Create a separate repository for this business.
+**Upload to `macv0223/Psalm23`, never Thrive PTO.** The archive includes a complete GitHub repository structure and root-level website files for GitHub Pages branch hosting.
 
 ## Run locally
 
@@ -58,7 +60,14 @@ All CMS credentials are set in Cloudflare secrets. No client secret should ever 
 
 Source: https://psalm-23-transportation.igarza5652.chatgpt.site/ (reviewed October 14, 2026).
 
-The source page has the business phone number `281-766-1320`, contact address `Psalm23Transportation@yahoo.com`, and a logo served at `/logo.jpeg`. Because the logo's binary file could not be retrieved in this environment, the new site uses the source site's HTTPS logo URL initially, plus a bundled original fallback mark. **Upload the approved logo in the CMS to remove that dependency**.
+The business's phone number is `281-766-1320` and the email is `Psalm23Transportation@yahoo.com`. The selected Christian jigsaw-cross logo is bundled at `public/assets/uploads/psalm23-puzzle-cross.webp`, with the original transparent art retained at `public/assets/uploads/psalm23-puzzle-cross-original.png`. The site's favicon also uses this artwork. No external logo image is required.
+
+## Changes in this update
+
+- Replaced the old external truck-logo image with the approved transparent bronze-and-green puzzle-cross across the website and CMS.
+- Refined the hero, services, family story, and enquiry copy; removed the repeated 'load' double entendres.
+- Revised the outgoing quote-request label to 'Items to transport'. The form still hands the drafted text or email to the visitor to send.
+- Preserved the original business contact details, Psalm 23:1, faith-led message, GitHub CMS schema, and GitHub Pages workflow.
 
 ## Limitations before activation
 

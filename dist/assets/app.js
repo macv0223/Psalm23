@@ -22,7 +22,7 @@ if(form){
       'Name: '+get('customerName'),
       'Pickup: '+get('pickup'),
       'Destination: '+get('destination'),
-      'Load: '+get('load'),
+      'Items to transport: '+get('load'),
       ...(get('timeframe')?['Preferred timeframe: '+get('timeframe')]:[]),
       '',
       'Please let me know what other details you need. Thank you!'
@@ -41,7 +41,7 @@ if(form){
     const message=details();if(!message)return;
     if(button.dataset.action==='email'){
       const email=form.dataset.email;
-      const subject=encodeURIComponent('Hauling quote request');
+      const subject=encodeURIComponent('Transportation quote request');
       location.href=`mailto:${email}?subject=${subject}&body=${encodeURIComponent(message)}`;
       status.textContent='Your email app should open with a draft. Review and send it to submit your request.';
     }else if(button.dataset.action==='copy'){

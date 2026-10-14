@@ -6,18 +6,16 @@ This guide is designed for the site owner. **The website is already built locall
 
 You need a GitHub account, a Cloudflare account for its free Worker, and access to a dedicated domain if you want a custom address. Every person who edits the site must have an approved GitHub account. You do **not** need a credit card for GitHub Pages hosting or to build this website; provider eligibility and limits may change, so confirm the current free-tier terms at setup time.
 
-## Part 1 — Create the GitHub website repository
+## Part 1 — Update the existing Psalm23 GitHub website
 
-1. Sign in to GitHub and select **New repository**.
-2. Name it `psalm-23-transportation`, or choose a distinct name of your own. Do not put this into `macv0223/thrive-pto`.
-3. Set the repository to **Public** if you want normal GitHub Pages free-tier hosting. Leave it empty without an automatic README.
-4. Upload the **contents** of the repository ZIP into the **root** of the new repository: `.github/`, `content/`, `cms/`, `public/`, `scripts/`, `tests/`, `docs/`, `package.json`, `README.md`, and optionally `dist/`. Do not upload only a folder containing these files.
-5. On GitHub, open **Settings → Pages → Build and deployment → Source**, select **GitHub Actions**.
-6. Go to **Actions** and choose the `Publish Psalm 23 Transportation website` workflow. Run it if it did not start after the upload.
-7. Wait for the green deployment check. Your temporary site will be `https://GITHUB-USERNAME.github.io/REPOSITORY-NAME/` unless you already have a custom domain.
-8. Browse the public site and check the phone, email, and quote form. The editor at `/admin/` will intentionally say it is waiting for configuration until you complete Parts 2–4.
+1. Sign in as `macv0223` and open `https://github.com/macv0223/Psalm23`.
+2. Extract `Psalm23-UPDATED-macv0223-GitHub-upload.zip` **before** uploading. Use **Add file → Upload files** and upload the files and folders inside the ZIP into the repository **root**. Replace existing website files where GitHub offers to do so; confirm that `index.html`, `assets/`, `public/`, `content/`, `scripts/`, `cms/`, and the hidden `.github/workflows/pages.yml` have been included. If the GitHub web uploader cannot replace a file, commit its replacement through GitHub Desktop instead. Do not upload the ZIP file itself as a lone file.
+3. Commit the changes on `main`. This is the existing site; **do not** create another repository and do not add these files to Thrive PTO.
+4. To publish the mirrored root site immediately, open **Settings → Pages → Build and deployment → Source**, select **Deploy from a branch**, choose `main` and `/(root)`, then save. Check `https://macv0223.github.io/Psalm23/` after GitHub Pages finishes publishing.
+5. **For CMS edits to publish automatically**, change **Settings → Pages → Source** to **GitHub Actions**, open **Actions → Publish Psalm 23 Transportation website**, and run the workflow (or allow it to run on push). This method rebuilds the website from `content/site.json` after each published edit. The Workflow only works if `.github/workflows/pages.yml` was successfully uploaded.
+6. Check desktop/mobile rendering, the puzzle-cross images, phone and email links, and the quote form. The admin workspace at `/admin/` remains disconnected until Parts 2–4 have been completed.
 
-**If you're uploading through GitHub's browser:** ensure the hidden `.github` directory is included, because that contains the automatic publisher. Alternatively use GitHub Desktop or upload from a locally unzipped folder.
+The repo already has the correct ownership (`macv0223/Psalm23`) and the approved logo is included locally; no previous external logo URL is needed.
 
 ## Part 2 — Make a secure login endpoint on Cloudflare
 
@@ -73,10 +71,10 @@ The Decap CMS editor uses an **editorial workflow**: changes can be drafted and 
 
 **If OAuth fails:** Confirm the GitHub callback URL matches the Worker URL exactly; Worker `AUTH_ORIGIN` matches the Worker host; `CMS_ORIGIN` matches the website address's origin; `CMS_OAUTH_ORIGIN` is set in GitHub Actions variables; the editor has a correct GitHub account, approved username or verified email, and write access; and all three secrets were configured on the Cloudflare Worker.
 
-## Part 5 — Replace the logo and check the quote form
+## Part 5 — Confirm the puzzle-cross logo and check the quote form
 
-1. Open the CMS editor, expand **Branding & contact details**, and upload the actual business logo under **Main logo / truck image**.
-2. Add or confirm a useful image description. The source-site image at `...chatgpt.site/logo.jpeg` is currently referenced externally until replaced; the SVG bundled with the site is only a fallback, not the original artwork.
+1. The approved bronze-and-forest-green Christian jigsaw-cross logo is now bundled locally and displayed in the navigation, homepage, story panel, footer, favicon, and editor. It does not link to the original site.
+2. If the owner later changes the brand, open **Branding & contact details → Primary puzzle-cross logo** in the CMS and upload the approved replacement. Include an accessible image description.
 3. Update the telephone, email, and any wording the business owner approves. Do not invent insurance, licenses, capacity, or routes.
 4. Make a test quote request on a phone, review that it opens the messaging app with the correct number and details, and **send only a deliberate test message**. On a desktop, use the **Copy request** or **Email instead** options.
 5. Confirm the business actually receives the message and responds. The website itself does not store quote submissions.

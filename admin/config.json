@@ -12,7 +12,7 @@
   "public_folder": "assets/uploads",
   "site_url": "https://macv0223.github.io/Psalm23/",
   "display_url": "https://macv0223.github.io/Psalm23/",
-  "logo_url": "../assets/favicon.svg",
+  "logo_url": "../assets/favicon.png",
   "show_preview_links": false,
   "collections": [
     {
@@ -62,11 +62,11 @@
                 },
                 {
                   "name": "logo",
-                  "label": "Main logo / truck image",
+                  "label": "Primary puzzle-cross logo",
                   "widget": "image",
                   "required": false,
                   "allow_multiple": false,
-                  "hint": "The original logo is referenced from the existing site. Upload the original artwork here to make your new site independent."
+                  "hint": "The new bronze-and-green jigsaw cross is already installed. Upload a replacement here only if the business approves a new logo."
                 },
                 {
                   "name": "logoAlt",
@@ -216,7 +216,7 @@
                 },
                 {
                   "name": "cards",
-                  "label": "What we haul — add, edit, or reorder",
+                  "label": "Transportation services — add, edit, or reorder",
                   "widget": "list",
                   "min": 1,
                   "max": 12,
@@ -361,12 +361,12 @@
                 },
                 {
                   "name": "loadLabel",
-                  "label": "Load description label",
+                  "label": "Items to transport label",
                   "widget": "string"
                 },
                 {
                   "name": "loadPlaceholder",
-                  "label": "Load placeholder",
+                  "label": "Item description placeholder",
                   "widget": "string"
                 },
                 {
