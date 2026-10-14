@@ -1,7 +1,7 @@
 {
   "backend": {
     "name": "github",
-    "repo": "YOUR-GITHUB-USERNAME/psalm-23-transportation",
+    "repo": "macv0223/Psalm23",
     "branch": "main",
     "base_url": "https://not-configured.invalid",
     "auth_endpoint": "auth",
@@ -10,6 +10,8 @@
   "publish_mode": "editorial_workflow",
   "media_folder": "public/assets/uploads",
   "public_folder": "assets/uploads",
+  "site_url": "https://macv0223.github.io/Psalm23/",
+  "display_url": "https://macv0223.github.io/Psalm23/",
   "logo_url": "../assets/favicon.svg",
   "show_preview_links": false,
   "collections": [

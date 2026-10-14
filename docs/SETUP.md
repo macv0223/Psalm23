@@ -28,9 +28,9 @@ You need a GitHub account, a Cloudflare account for its free Worker, and access 
 
    | Variable | Example | Notes |
    | --- | --- | --- |
-   | `CMS_ORIGIN` | `https://YOURNAME.github.io` | Exact origin of the *live editor*, without `/repo/` or a trailing slash. Use your custom domain origin if the editor lives there. |
+   | `CMS_ORIGIN` | `https://macv0223.github.io` | Exact origin of the *live editor*, without `/repo/` or a trailing slash. Use your custom domain origin if the editor lives there. |
    | `AUTH_ORIGIN` | `https://psalm-23-transportation-auth.YOURSUBDOMAIN.workers.dev` | Exact Cloudflare Worker origin, no trailing slash. |
-   | `REPOSITORY` | `YOURNAME/psalm-23-transportation` | Your real GitHub repository. |
+   | `REPOSITORY` | `macv0223/Psalm23` | Your real GitHub repository. |
    | `PRIVATE_REPOSITORY` | `false` | Set `true` only for private repository installations supported by your GitHub Pages plan. |
 
 5. Add your editor allowlist as **Worker Secrets**:
@@ -46,7 +46,7 @@ You need a GitHub account, a Cloudflare account for its free Worker, and access 
 
 1. On GitHub select your profile photo → **Settings → Developer settings → OAuth Apps → New OAuth App**.
 2. Choose `Psalm 23 Transportation Website Editor` as the application name.
-3. Set **Homepage URL** to your live site, e.g. `https://YOURNAME.github.io/psalm-23-transportation/`.
+3. Set **Homepage URL** to your live site, e.g. `https://macv0223.github.io/Psalm23/`.
 4. Set **Authorization callback URL** to your exact Cloudflare Worker URL **plus `/callback`**, e.g. `https://psalm-23-transportation-auth.YOURSUBDOMAIN.workers.dev/callback`.
 5. Create the app. Copy **Client ID** and generate a **Client Secret**.
 6. In Cloudflare, add these as **Worker Secrets**, never directly in the repository:
@@ -66,7 +66,7 @@ The Decap CMS editor uses an **editorial workflow**: changes can be drafted and 
 1. On the GitHub repository, open **Settings → Secrets and variables → Actions → Variables → New repository variable**.
 2. Create `CMS_OAUTH_ORIGIN` with **only** the Worker origin, e.g. `https://psalm-23-transportation-auth.YOURSUBDOMAIN.workers.dev` (**no** `/auth`, **no** `/callback`).
 3. Go to **Actions** and rerun the website publish workflow. The GitHub Actions build automatically fills in the repository name and site URL. It does not store any client secrets in the published site.
-4. Visit `https://YOURNAME.github.io/psalm-23-transportation/admin/` or `https://YOURDOMAIN/admin/` when a custom domain is active.
+4. Visit `https://macv0223.github.io/Psalm23/admin/` or `https://YOURDOMAIN/admin/` when a custom domain is active.
 5. Select **Sign in to edit with GitHub**, grant the requested access, and check that the editor shows **Edit website → All website content**.
 6. Make a small test change and save it as a draft. Preview it, then publish. Confirm the GitHub action succeeds and the public website updates.
 7. Test an **unapproved** GitHub account too. It should be denied access.

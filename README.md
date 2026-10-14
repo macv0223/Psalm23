@@ -67,3 +67,14 @@ The source page has the business phone number `281-766-1320`, contact address `P
 - The website's quote form mirrors the original handoff-to-text approach and does not create tickets or deliver submissions automatically.
 - A future custom domain and verified ownership of the source logo are not assumed.
 
+
+## Deployment correction — Psalm23
+
+The canonical repository is `macv0223/Psalm23` at `https://github.com/macv0223/Psalm23`. The public site is `https://macv0223.github.io/Psalm23/`. Static files from `dist/` are mirrored to the repository root for compatibility with **Deploy from a branch → main → /(root)**. The included `.github/workflows/pages.yml` is the recommended ongoing publisher: in **Settings → Pages**, change **Source** to **GitHub Actions** and run the publish workflow. Otherwise content edits saved through the CMS do not automatically rebuild the root mirror. The CMS sign-in also requires a separate configured Cloudflare Worker and GitHub OAuth app.
+
+
+## Fix for macv0223/Psalm23 GitHub Pages
+
+This package includes an `index.html` and complete `assets/`, `admin/`, and `data/` at the repository ROOT, in addition to the original `dist/` build. For branch-based hosting, select **Settings > Pages > Deploy from a branch > main > /(root)**.
+
+The hidden `.github/workflows/pages.yml` has also been included for automatic CMS publishing. For this preferred long-term mode, instead select **GitHub Actions** in **Settings > Pages > Build and deployment > Source**. This must be selected by a repository administrator; simply including the workflow does not change the Pages Source setting. The editor is not live until Cloudflare OAuth is separately configured.

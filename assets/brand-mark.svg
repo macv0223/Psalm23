@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 110" role="img" aria-label="Psalm 23 Transportation fallback brand mark">
+<rect width="110" height="110" rx="22" fill="#12312f"/>
+<path d="M46 15h18v31h31v18H64v31H46V64H15V46h31z" fill="#db9d46"/>
+<path d="M46 15h18v31h31v18H64v31H46V64H15V46h31z" fill="none" stroke="#faefd9" stroke-width="2"/>
+<path d="M14 84h32" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".75"/><path d="M64 26h27" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".75"/>
+</svg>
